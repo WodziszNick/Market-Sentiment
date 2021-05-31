@@ -19,16 +19,7 @@ CREATE TABLE mention (
 CREATE INDEX ON mention (stock_id, dt DESC);
 SELECT create_hypertable('mention', 'dt');
 
-CREATE TABLE etf_holding (
-    etf_id INTEGER NOT NULL, 
-    holding_id INTEGER NOT NULL,
-    dt DATE NOT NULL, 
-    shares NUMERIC,
-    weight NUMERIC, 
-    PRIMARY KEY (etf_id, holding_id, dt),
-    CONSTRAINT fk_etf FOREIGN KEY (etf_id) REFERENCES stock (id),
-    CONSTRAINT fk_holding FOREIGN KEY (holding_id) REFERENCES stock (id)
-);
+
 
 CREATE TABLE stock_price (
     stock_id INTEGER NOT NULL,
