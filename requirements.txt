@@ -1,0 +1,3 @@
+psaw
+psycopg2-binary
+alpaca_trade_api
